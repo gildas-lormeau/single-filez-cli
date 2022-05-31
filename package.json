@@ -1,12 +1,12 @@
 {
 	"name": "single-filez-cli",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "SingleFileZ CLI",
 	"author": "Gildas Lormeau",
 	"license": "AGPL-3.0-or-later",
 	"main": "single-file-cli-api.js",
 	"bin": {
-		"single-file": "./single-file"
+		"single-filez": "./single-filez"
 	},
 	"scripts": {
 		"build": "./build-lib.sh"
