@@ -1,7 +1,7 @@
 {
 	"name": "single-filez-cli",
-	"version": "1.0.0",
-	"description": "SingleFile CLI",
+	"version": "1.0.1",
+	"description": "SingleFileZ CLI",
 	"author": "Gildas Lormeau",
 	"license": "AGPL-3.0-or-later",
 	"main": "single-file-cli-api.js",
