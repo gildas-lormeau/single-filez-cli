@@ -235,7 +235,7 @@ async function capturePage(options) {
 		if (options.includeInfobar) {
 			options.infobarScript = await getInfobarScript();
 		}
-		options.zipScript = fs.readFileSync("./lib/single-file-zip.min.js").toString();
+		options.zipScript = fs.readFileSync(require.resolve("./lib/single-file-zip.min.js")).toString();
 		const pageData = await backend.getPageData(options);
 		if (options.output) {
 			filename = getFilename(options.output, options);
