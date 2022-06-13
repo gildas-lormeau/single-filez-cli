@@ -1,6 +1,6 @@
 {
 	"name": "single-filez-cli",
-	"version": "1.0.15",
+	"version": "1.0.16",
 	"description": "SingleFileZ CLI",
 	"author": "Gildas Lormeau",
 	"license": "AGPL-3.0-or-later",
@@ -26,7 +26,7 @@
 		"jsdom": "19.0.0",
 		"puppeteer-core": "14.2.1",
 		"selenium-webdriver": "4.2.0",
-		"single-filez-core": "1.0.7",
+		"single-filez-core": "1.0.9",
 		"strong-data-uri": "1.0.6",
 		"yargs": "17.5.1"
 	},
