@@ -84,31 +84,9 @@ async function getPageData(win, options) {
 	if (options.browserWaitDelay) {
 		await new Promise(resolve => setTimeout(resolve, options.browserWaitDelay));
 	}
-	const pageData = await win.singlefile.getPageData(options, { fetch: url => fetchResource(url, options) }, doc, win);
+	const pageData = await win.singlefile.getPageData(options, undefined, doc, win);
 	pageData.content = new Uint8Array(pageData.content);
 	return pageData;
-
-	async function fetchResource(resourceURL) {
-		return new Promise((resolve, reject) => {
-			const xhrRequest = new win.XMLHttpRequest();
-			xhrRequest.withCredentials = true;
-			xhrRequest.responseType = "arraybuffer";
-			xhrRequest.onerror = event => reject(new Error(event.detail));
-			xhrRequest.onreadystatechange = () => {
-				if (xhrRequest.readyState == win.XMLHttpRequest.DONE) {
-					resolve({
-						arrayBuffer: async () => new Uint8Array(xhrRequest.response).buffer,
-						headers: {
-							get: headerName => xhrRequest.getResponseHeader(headerName)
-						},
-						status: xhrRequest.status
-					});
-				}
-			};
-			xhrRequest.open("GET", resourceURL, true);
-			xhrRequest.send();
-		});
-	}
 }
 
 async function getBrowserOptions(options) {
