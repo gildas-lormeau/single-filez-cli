@@ -103,7 +103,7 @@ const args = require("yargs")
 		"self-extracting-archive": true
 	})
 	.options("back-end", { description: "Back-end to use" })
-	.choices("back-end", ["jsdom", "puppeteer", "webdriver-chromium", "webdriver-gecko", "puppeteer-firefox", "playwright-firefox", "playwright-chromium"])
+	.choices("back-end", ["jsdom", "puppeteer", "webdriver-chromium", "webdriver-gecko", "puppeteer-firefox", "playwright-firefox", "playwright-chromium", "playwright-webkit"])
 	.options("--block-audios", { description: "Block audios" })
 	.boolean("--block-audios")
 	.options("--block-fonts", { description: "Block fonts" })
