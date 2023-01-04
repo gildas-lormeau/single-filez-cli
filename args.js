@@ -65,6 +65,9 @@ const args = require("yargs")
 		"filename-max-length": 192,
 		"filename-max-length-unit": "bytes",
 		"http-header": [],
+		"http-proxy-server": "",
+		"http-proxy-username": "",
+		"http-proxy-password": "",
 		"include-infobar": false,
 		"insert-meta-csp": true,
 		"load-deferred-images": true,
@@ -190,6 +193,12 @@ const args = require("yargs")
 	.string("filename-max-length-unit")
 	.options("http-header", { description: "Extra HTTP header (puppeteer, jsdom)" })
 	.array("http-header")
+	.options("http-proxy-server", { description: "Proxy address (puppeteer)" })
+	.string("http-proxy-server")
+	.options("http-proxy-username", { description: "HTTP username (puppeteer)" })
+	.string("http-proxy-username")
+	.options("http-proxy-password", { description: "HTTP password (puppeteer)" })
+	.string("http-proxy-password")
 	.options("include-BOM", { description: "Include the UTF-8 BOM into the HTML page" })
 	.boolean("include-BOM")
 	.options("include-infobar", { description: "Include the infobar" })
