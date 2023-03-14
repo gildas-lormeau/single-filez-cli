@@ -24,7 +24,7 @@
 /* global require, exports, process, setTimeout, clearTimeout */
 
 const firefox = require("selenium-webdriver/firefox");
-const { Builder, By, Key } = require("selenium-webdriver");
+const { Builder, By, Key, Capabilities } = require("selenium-webdriver");
 
 exports.initialize = async () => { };
 
@@ -33,6 +33,7 @@ exports.getPageData = async options => {
 	try {
 		const builder = new Builder().withCapabilities({ "pageLoadStrategy": "none" });
 		builder.setFirefoxOptions(getBrowserOptions(options));
+		setBuilderCapabilities(builder, options);
 		driver = builder.forBrowser("firefox").build();
 		return await getPageData(driver, options);
 	} finally {
@@ -41,6 +42,14 @@ exports.getPageData = async options => {
 		}
 	}
 };
+
+function setBuilderCapabilities(builder, options) {
+	if (options.browserIgnoreInsecureCerts !== undefined && options.browserIgnoreInsecureCerts) {
+		const capabilities = new Capabilities();
+		capabilities.setAcceptInsecureCerts(true);
+		builder.withCapabilities(capabilities);
+	}
+}
 
 exports.closeBrowser = () => { };
 
