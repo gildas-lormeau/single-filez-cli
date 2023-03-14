@@ -1,7 +1,7 @@
 import { terser } from "rollup-plugin-terser";
 import resolve from "@rollup/plugin-node-resolve";
 
-const PLUGINS = [resolve({ moduleDirectories: ["node_modules"] })];
+const PLUGINS = [resolve({ moduleDirectories: [".."] })];
 const EXTERNAL = ["single-filez-core"];
 
 export default [{
