@@ -56,6 +56,7 @@ const args = require("yargs")
 		"browser-cookie": [],
 		"browser-cookies-file": "",
 		"browser-ignore-insecure-certs": false,
+		"browser-freeze-prototypes": false,
 		"compress-CSS": false,
 		"compress-HTML": true,
 		"dump-content": false,
@@ -155,6 +156,8 @@ const args = require("yargs")
 	.string("browser-cookies-file")
 	.options("browser-ignore-insecure-certs", { description: "Ignore HTTPs errors" })
 	.boolean("browser-ignore-insecure-certs")
+	.options("browser-freeze-prototypes", { description: "Freeze prototypes of built-in objects in the page" })
+	.boolean("browser-freeze-prototypes")
 	.options("compress-CSS", { description: "Compress CSS stylesheets" })
 	.boolean("compress-CSS")
 	.options("compress-HTML", { description: "Compress HTML content" })
