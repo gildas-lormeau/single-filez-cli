@@ -66,6 +66,7 @@ const args = require("yargs")
 		"filename-replacement-character": "_",
 		"filename-max-length": 192,
 		"filename-max-length-unit": "bytes",
+		"replace-emojis-in-filename": false,
 		"http-header": [],
 		"http-proxy-server": "",
 		"http-proxy-username": "",
@@ -198,6 +199,8 @@ const args = require("yargs")
 	.number("filename-max-length")
 	.options("filename-max-length-unit", { description: "Specify the unit of the maximum length of the filename ('bytes' or 'chars')" })
 	.string("filename-max-length-unit")
+	.options("replace-emojis-in-filename", { description: "Replace emojis in the filename with their unicode text representation" })
+	.boolean("replace-emojis-in-filename")
 	.options("http-header", { description: "Extra HTTP header (puppeteer, jsdom)" })
 	.array("http-header")
 	.options("http-proxy-server", { description: "Proxy address (puppeteer)" })
