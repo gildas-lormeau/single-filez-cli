@@ -25,7 +25,6 @@
 
 const fs = require("fs");
 const path = require("path");
-const scripts = require("./back-ends/common/scripts.js");
 const VALID_URL_TEST = /^(https?|file):\/\//;
 
 const DEFAULT_OPTIONS = {
@@ -233,9 +232,6 @@ function getHostURL(url) {
 async function capturePage(options) {
 	try {
 		let filename;
-		if (options.includeInfobar) {
-			options.infobarScript = await getInfobarScript();
-		}
 		options.zipScript = fs.readFileSync(require.resolve("./lib/single-file-zip.min.js")).toString();
 		const pageData = await backend.getPageData(options);
 		if (options.output) {
@@ -295,9 +291,4 @@ function getFilename(filename, options, index = 1) {
 	} else {
 		return newFilename;
 	}
-}
-
-async function getInfobarScript() {
-	const infobarContent = await scripts.getInfobarScript();
-	return "<script>document.currentScript.remove();" + infobarContent + "</script>";
 }
