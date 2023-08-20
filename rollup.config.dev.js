@@ -44,15 +44,6 @@ export default [{
 	plugins: PLUGINS,
 	external: EXTERNAL
 }, {
-	input: ["single-filez-core/single-file-infobar.js"],
-	output: [{
-		file: "lib/single-file-infobar.js",
-		format: "iife",
-		plugins: [terser()]
-	}],
-	plugins: PLUGINS,
-	external: EXTERNAL
-}, {
 	input: ["single-filez-core/vendor/zip/zip.min.js"],
 	output: [{
 		file: "lib/single-file-zip.min.js",

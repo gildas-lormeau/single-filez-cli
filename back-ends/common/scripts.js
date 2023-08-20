@@ -93,10 +93,6 @@ exports.get = async options => {
 	return scripts;
 };
 
-exports.getInfobarScript = () => {
-	return readScriptFile("lib/single-file-infobar.js", basePath);
-};
-
 async function readScriptFiles(paths, basePath = "../../../") {
 	return (await Promise.all(paths.map(path => readScriptFile(path, basePath)))).join("");
 }
