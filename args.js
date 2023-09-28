@@ -77,7 +77,7 @@ const args = require("yargs")
 		"load-deferred-images-dispatch-scroll-event": false,
 		"load-deferred-images-max-idle-time": 1500,
 		"load-deferred-images-keep-zoom-level": false,
-		"load-deferred-images-before-frames": false,	
+		"load-deferred-images-before-frames": false,
 		"max-parallel-workers": 8,
 		"max-resource-size-enabled": false,
 		"max-resource-size": 10,
@@ -245,7 +245,7 @@ const args = require("yargs")
 	.options("remove-unused-fonts", { description: "Remove unused CSS font rules" })
 	.boolean("remove-unused-fonts")
 	.options("remove-saved-date", { description: "Remove saved date metadata in HTML header" })
-  	.boolean("remove-saved-date")
+	.boolean("remove-saved-date")
 	.options("block-scripts", { description: "Block scripts" })
 	.boolean("block-scripts")
 	.options("block-audios", { description: "Block audio elements" })
