@@ -109,8 +109,7 @@ async function getPageData(page, options) {
 	}
 	const pageData = await page.evaluate(async options => {
 		options.compressContent = true;
-		const pageData = await singlefile.getPageData(options);
-		return pageData;
+		return await singlefile.getPageData(options);
 	}, options);
 	pageData.content = new Uint8Array(pageData.content);
 	return pageData;

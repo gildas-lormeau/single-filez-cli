@@ -182,8 +182,7 @@ function getPageDataScript() {
 
 	async function getPageData() {
 		options.compressContent = true;
-		const pageData = await window.singlefile.getPageData(options);
-		return pageData;
+		return await window.singlefile.getPageData(options);
 	}
 	`;
 }
