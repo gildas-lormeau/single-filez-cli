@@ -142,7 +142,7 @@ async function getPageData(context, page, options) {
 			} else {
 				throw error;
 			}
-		} else {
+		} else if (error.name != "TimeoutError") {
 			throw error;
 		}
 	}
@@ -165,7 +165,7 @@ async function getPageData(context, page, options) {
 			} else {
 				throw error;
 			}
-		} else if (error.name != "TimeoutError") {
+		} else {
 			throw error;
 		}
 	}
