@@ -170,9 +170,6 @@ function getPageDataScript() {
 	async function getPageData() {
 		options.compressContent = true;
 		const pageData = await singlefile.getPageData(options);
-		if (options.infobarScript) {
-			pageData.content += options.infobarScript;
-		}
 		return pageData;
 	}
 	`;
